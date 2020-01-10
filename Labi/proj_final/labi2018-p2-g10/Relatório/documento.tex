@@ -1,0 +1,164 @@
+\documentclass{report}
+\usepackage[T1]{fontenc} % Fontes T1
+\usepackage[utf8]{inputenc} % Input UTF8
+%\usepackage[backend=biber, style=ieee]{biblatex} % para usar bibliografia
+\usepackage{csquotes}
+\usepackage[portuguese]{babel} %Usar língua portuguesa
+\usepackage{blindtext} % Gerar texto automaticamente
+\usepackage[printonlyused]{acronym}
+\usepackage{hyperref} % para autoref
+\usepackage{graphicx}
+
+\bibliography{bibliografia}
+
+
+\begin{document}
+%%
+% Definições
+%
+\def\titulo{Projeto Final}
+\def\data{14 de Junho de 2018}
+\def\autores{António Domingues, Diogo Fernandes,Pedro Alves, João Mota}
+\def\autorescontactos{(89007) antonioccdomingues@ua.pt, (89221) diogo.fernandes77@ua.pt, (88861) pedroalves99@ua.pt,(89160)joaormota@ua.pt}
+
+\def\versao{}
+\def\departamento{Departamento de Eletrónica, Telecomunicações e Informática}
+\def\empresa{Universidade de Aveiro}
+\def\logotipo{ua.pdf}
+%
+%%%%%% CAPA %%%%%%
+%
+\begin{titlepage}
+
+\begin{center}
+%
+\vspace*{50mm}
+%
+{\Huge \titulo}\\ 
+%
+\vspace{10mm}
+%
+{\Large \empresa}\\
+%
+\vspace{10mm}
+%
+{\LARGE \autores}\\ 
+%
+\vspace{30mm}
+%
+\begin{figure}[h]
+\center
+\includegraphics{\logotipo}
+\end{figure}
+%
+\vspace{30mm}
+\end{center}
+%
+\begin{flushright}
+\versao
+\end{flushright}
+\end{titlepage}
+
+%%  Página de Título %%
+\title{%
+{\Huge\textbf{\titulo}}\\
+{\Large \departamento\\ \empresa}
+}
+%
+\author{%
+    \autores \\
+    \autorescontactos
+}
+%
+\date{\data}
+%
+\maketitle
+
+\pagenumbering{roman}
+
+%%%%%% RESUMO %%%%%%
+\renewcommand{\abstractname}{Resumo}
+\begin{abstract}
+Este relatório foi escrito no ambito da unidade curricular \ac{labi}, no qual tinhamos o objetivo de criar um sistema que permitiria criar músicas através da composição de vários pedaços de música(samples). Para o bom funcionar deste projeto deveriamos ter uma interface web, que iria ser desenvolvida em \ac{html}, \ac{css} e \ac{js}. 
+
+De seguida também teriamos uma aplicação web feita em \textit{python}, onde teria de servir conteúdos estáticos(\ac{html}, \ac{css} e \ac{js}) e também métodos, métodos estes que têm de permitir o fluxo de informação entre os diversos componentes.
+
+Como não podia faltar, temos de ter uma parte de persistência. Este componente é responsável pela armazenação de dados das respetivas musicas, bem como dados dos utilizadores. Para isto a base de dados utlizada foi \textit{SQLite3}
+
+Para concluir, a parte do gerador de músicas. Esta era responsável por gerar as musicas que o utilizador criava.
+\end{abstract}
+
+\tableofcontents
+% \listoftables     % descomentar se necessário
+% \listoffigures    % descomentar se necessário
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introdução}
+\label{chap.introducao}
+
+O objetivo deste relatório, é descrever e analisar os programas que foram desenvolvidos avaliando também a sua execução.
+
+Conforme o programa, este documento encontra-se organizado por capítulos, sendo a introdução o primeiro. No \autoref{chap.implementacao} é descrito o funcionamento dos programas, sendo ainda separado em secções, consistindo na aplicação web, na base de dados e no site.
+
+\chapter{Implementação}
+\label{chap.implementacao}
+
+\section{Interface web}
+\label{sec.Interface web}
+
+
+A interface web é constituída por vários campos, um para o nome da futura música("song name")e um para as batidas por minuto da música("BPM").
+A interface também é constituida por uma tabela(4x12) onde se irá escolher a posição das samples. A primeira fila é para o som de um prato crash, a segunda é para o som de
+um prato de choque(hit-hat), o terceiro para o som da tarola(snare) e por fim a ultima para o som de um bombo(kick). Por fim temos uma lista de efeitos que poderão ser escolhidos: delay, reverb, echo e tremolo.
+\section{Aplicação web}
+\label{sec.Aplicação web}
+Consiste num javascript que: lê as entradas para o nome da música e para os bpm, utiliza um for para ler as posições de cada fila(samples), ou seja 4 for no total e 4 if's para
+ler os efeitos selecionados. No fim converte tudo numa string com formato json para ser enviado para o cherrypy com a função .post.
+
+\section{Base de Dados}
+\label{sec.Base de Dados}
+
+A base de dados, é responsável por guardar todas as informações relativas ás musicas, samples bem como os utilizadores e em que musica votaram. Assim a base de dados é responável por criar 3 tabelas, \textit{tabela1} (corresponde á tabela onde sao guardadas as informações dos samples), \textit{musicas} (guarda as informações das musicas), e a tabela \textit{users}.
+
+No programa python relativo á base de dados, estão várias funções, funções estas que atualizam informaçoes quando um utilizador cria por exemplo uma musica, apaga uma musica e vota. Em cada função que criamos, temos de nos conectar á base de dados fazendo \textit{db = sql.connect('database.db')}. Depois disto utilizamos instruções do tipo \textit{insert, delete, select}  e \textit{update}. No fim destas instruções realizamos um \textit{db.commit()} para que a "transação" seja finalizada. Após todas estas operações finalizamos a ligação com a base de dados realizando um \textit{db.close()}
+
+Para concluir, a base de dados é invocada pelo cherrypy cada vez que é precisa a sua utilização
+
+\chapter{Conclusão}
+\label{chap.Conclusão}
+Não obtivemos um resultado final, ficou em falta o módulo do gerador de músicas e nao conseguimos interligar os diferentes componentes,apesar disso conseguimos por algumas coisas a funcionar(site,base dados,aplicação web).
+\chapter{Contribuições dos autores}
+\label{Contribuições dos autores}
+Numa primeira fase tentamos abordar o projeto de uma maneira integral,mas com o passar do tempo,devido à dependencia de cada módulo, não obtivemos muitos progressos.Por isso decidimos dividir o trabalho em módulos independentes.
+Neste projeto as contribuições dos elementos do grupo são apresentadas de seguida.
+
+\begin{itemize}
+\item António Domingues: Base de dados
+\item Diogo Daniel: Interface web e aplicação web
+\item João Mota: Gerador de músicas 
+\item Pedro Alves: layout da pagina web(Home, listagem, about)
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Acrónimos}
+\begin{acronym}
+\acro{ua}[UA]{Universidade de Aveiro}
+\acro{miect}[MIECT]{Mestrado Integrado em Engenharia de Computadores e Telemática}
+\acro{html}[HTML]{HyperText Markup Language}
+\acro{css}[CSS]{Cascading Style Sheets}
+\acro{js}[JS]{JavaScript}
+\acro{labi}[LABI]{Laboratórios de Informática}
+\acro{CSV}[CSV]{Comma Separated Values}
+\acro{JSON}[JSON]{JavaScript Object Notation}
+\end{acronym}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography
+
+\end{document}

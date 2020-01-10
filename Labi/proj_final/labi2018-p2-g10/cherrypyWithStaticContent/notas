@@ -1,0 +1,62 @@
+1a tabela:
+-nome "TEXT"
+-id "TEXT"
+-tamanho INTEGER
+-data "TEXT"
+-usos INTEGER
+-votos INTEGER
+-autor "TEXT"
+
+
+
+
+
+CREATE TABLE tabela1(
+nome TEXT,
+ID TEXT,
+tamanho INTEGER,
+data TEXT,
+usos INTEGERL,
+votos INTEGER 
+autor TEXT
+);
+
+
+
+INSERT INTO tabela1
+VALUES (
+"nomemusica.wav", "id", 123, "data",2 , 2, "autor"
+);
+
+
+ALTER TABLE tabela1
+ADD column_name autor;
+---------------------
+2a tabela: musicas
+nome "TEXT",
+id "TEXT",
+tamanho INTEGER,
+data "TEXT",
+votos INTEGER,
+autor "TEXT",
+-------------------
+3a tabela: votos
+username "TEXT",
+id INTIGER,
+
+
+
+
+
+
+
+INSERT INTO tabela1
+VALUES (
+"value1", "value2"
+);
+
+
+
+
+
+https://www.w3schools.com/sql/sql_alter.asp

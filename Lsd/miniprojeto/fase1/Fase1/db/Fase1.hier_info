@@ -1,0 +1,138 @@
+|Blocks
+LEDG[0] <= Main:inst1.luz
+KEY[0] => inst.IN0
+KEY[1] => inst2.IN0
+CLOCK_50 => Reset:inst7.clk
+CLOCK_50 => divisor:inst9.clkIn
+CLOCK_50 => Start_Stop:inst6.clk
+LEDR[0] <= Main:inst1.cont3[0]
+LEDR[1] <= Main:inst1.cont3[1]
+LEDR[2] <= Main:inst1.cont3[2]
+LEDR[3] <= Main:inst1.cont3[3]
+LEDR[4] <= Main:inst1.cont3[4]
+LEDR[5] <= Main:inst1.cont3[5]
+LEDR[6] <= Main:inst1.cont3[6]
+LEDR[7] <= Main:inst1.cont3[7]
+LEDR[8] <= Main:inst1.cont3[8]
+LEDR[9] <= Main:inst1.cont3[9]
+LEDR[10] <= Main:inst1.cont3[10]
+LEDR[11] <= Main:inst1.cont3[11]
+
+
+|Blocks|Main:inst1
+reset3 => s_stop3.OUTPUTSELECT
+reset3 => s_stop_reset3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_cont3.OUTPUTSELECT
+reset3 => s_luz.OUTPUTSELECT
+clk3 => s_luz.CLK
+clk3 => s_cont3[0].CLK
+clk3 => s_cont3[1].CLK
+clk3 => s_cont3[2].CLK
+clk3 => s_cont3[3].CLK
+clk3 => s_cont3[4].CLK
+clk3 => s_cont3[5].CLK
+clk3 => s_cont3[6].CLK
+clk3 => s_cont3[7].CLK
+clk3 => s_cont3[8].CLK
+clk3 => s_cont3[9].CLK
+clk3 => s_cont3[10].CLK
+clk3 => s_cont3[11].CLK
+clk3 => s_stop_reset3.CLK
+clk3 => s_stop3.CLK
+enable => s_stop3.OUTPUTSELECT
+enable => s_stop_reset3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_cont3.OUTPUTSELECT
+enable => s_luz.OUTPUTSELECT
+stop_reset3 <= s_stop_reset3.DB_MAX_OUTPUT_PORT_TYPE
+stop3 <= s_stop3.DB_MAX_OUTPUT_PORT_TYPE
+luz <= s_luz.DB_MAX_OUTPUT_PORT_TYPE
+cont3[0] <= s_cont3[0].DB_MAX_OUTPUT_PORT_TYPE
+cont3[1] <= s_cont3[1].DB_MAX_OUTPUT_PORT_TYPE
+cont3[2] <= s_cont3[2].DB_MAX_OUTPUT_PORT_TYPE
+cont3[3] <= s_cont3[3].DB_MAX_OUTPUT_PORT_TYPE
+cont3[4] <= s_cont3[4].DB_MAX_OUTPUT_PORT_TYPE
+cont3[5] <= s_cont3[5].DB_MAX_OUTPUT_PORT_TYPE
+cont3[6] <= s_cont3[6].DB_MAX_OUTPUT_PORT_TYPE
+cont3[7] <= s_cont3[7].DB_MAX_OUTPUT_PORT_TYPE
+cont3[8] <= s_cont3[8].DB_MAX_OUTPUT_PORT_TYPE
+cont3[9] <= s_cont3[9].DB_MAX_OUTPUT_PORT_TYPE
+cont3[10] <= s_cont3[10].DB_MAX_OUTPUT_PORT_TYPE
+cont3[11] <= s_cont3[11].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Blocks|Reset:inst7
+pressed => s_reset.OUTPUTSELECT
+stop_reset => s_reset.OUTPUTSELECT
+clk => s_reset.CLK
+stout <= s_reset.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Blocks|divisor:inst9
+clkIn => s_counter[0].CLK
+clkIn => s_counter[1].CLK
+clkIn => s_counter[2].CLK
+clkIn => s_counter[3].CLK
+clkIn => s_counter[4].CLK
+clkIn => s_counter[5].CLK
+clkIn => s_counter[6].CLK
+clkIn => s_counter[7].CLK
+clkIn => s_counter[8].CLK
+clkIn => s_counter[9].CLK
+clkIn => s_counter[10].CLK
+clkIn => s_counter[11].CLK
+clkIn => s_counter[12].CLK
+clkIn => s_counter[13].CLK
+clkIn => s_counter[14].CLK
+clkIn => s_counter[15].CLK
+clkIn => s_counter[16].CLK
+clkIn => s_counter[17].CLK
+clkIn => s_counter[18].CLK
+clkIn => s_counter[19].CLK
+clkIn => s_counter[20].CLK
+clkIn => s_counter[21].CLK
+clkIn => s_counter[22].CLK
+clkIn => s_counter[23].CLK
+clkIn => s_counter[24].CLK
+clkIn => s_counter[25].CLK
+clkIn => s_counter[26].CLK
+clkIn => s_counter[27].CLK
+clkIn => s_counter[28].CLK
+clkIn => s_counter[29].CLK
+clkIn => s_counter[30].CLK
+clkIn => clkOut~reg0.CLK
+clkOut <= clkOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Blocks|Start_Stop:inst6
+pressed => process_0.IN1
+pressed => s_cont.OUTPUTSELECT
+stop => process_0.IN1
+stop => s_ver.OUTPUTSELECT
+clk => s_cont.CLK
+clk => s_ver.CLK
+clk => s_stop.CLK
+stout <= s_stop.DB_MAX_OUTPUT_PORT_TYPE
+
+

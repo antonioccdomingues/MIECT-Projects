@@ -1,0 +1,25 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity Start_Stop is
+	port( button : in std_logic;
+			stin : in std_logic;
+			stop : in std_logic;
+			stout : out std_logic);
+end Start_Stop;
+
+architecture of Start_Stop is
+begin
+	process(button)
+	begin
+		if (rising_edge(button)) then
+			if (stin = '0') then
+				stout = '1';
+				stop = '0';
+			elsif (stin = '1') then
+				stout = '0';
+			end if;
+		end if;
+		if (stop = '1') then
+			c = '0';
+		end if;

@@ -1,0 +1,36 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity divisor is
+	port(clkIn4 : in	std_logic;
+		  --k	  : in	std_logic_vector(31 downto 0);
+		  clkOut4: out 	std_logic);
+end divisor;
+
+architecture Behavioral of divisor is
+
+	signal s_counter4: natural;
+	signal s_halfWay4: unsigned(25 downto 0);
+	signal k4: unsigned(25 downto 0);
+	
+begin
+	k4 <= "10111110101111000010000000";
+	s_halfWay4 <= (k4 / 2);
+	
+	process(clkIn4)
+	begin
+		if(rising_edge(clkIn4)) then
+			if(s_counter4 = k4 - 1) then
+				clkOut4 <= '0';
+				s_counter4 <= 0;
+			else
+				if(s_counter4 = k4 /2 - 1)  then
+					clkOut4 <= '1';
+				end if;
+				s_counter4 <= s_counter4 + 1;
+			end if;
+		end if;
+	end process;
+	
+end Behavioral;
