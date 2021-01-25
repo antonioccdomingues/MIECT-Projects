@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Loja | EcoMarket</title>
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="/ams_g202/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/ams_g202/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/ams_g202/favicon-16x16.png">
+	<link rel="icon" type="image/x-icon" href="/ams_g202/favicon.ico">
+
+	<script src="/ams_g202/js/jquery-2.0.0.min.js"></script>
+	  
+	<script src="/ams_g202/js/login.js"></script>
+
+  	<script src="/ams_g202/js/bootstrap.bundle.min.js"></script>
+  	<link href="/ams_g202/css/bootstrap.css" rel="stylesheet">
+	  
+	<script src="/ams_g202/js/universal-parallax.min.js"></script>
+
+  	<link href="/ams_g202/fonts/fontawesome/css/all.min.css" rel="stylesheet">
+  	<link href="/ams_g202/fonts/feathericons/css/iconfont.css" rel="stylesheet">
+  	<link href="/ams_g202/fonts/material-icons/css/materialdesignicons.css" rel="stylesheet">
+
+  	<link href="/ams_g202/css/ui.css" rel="stylesheet">
+  	<script src="/ams_g202/js/script.js"></script>
+</head>
+<body>
+	<script>
+		if (ecomarket_user.type == "produtor"){
+			window.location.replace("/ams_g202/marketplace/sell");
+		} else{
+			window.location.replace("/ams_g202/marketplace/buy");
+		}
+	</script>
+</body>
+</html>

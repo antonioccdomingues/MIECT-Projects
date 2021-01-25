@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  	<title>Vender | EcoMarket</title>
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="/ams_g202/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/ams_g202/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/ams_g202/favicon-16x16.png">
+	<link rel="icon" type="image/x-icon" href="/ams_g202/favicon.ico">
+
+	<script src="/ams_g202/js/jquery-2.0.0.min.js"></script>
+	  
+	<script src="/ams_g202/js/login.js"></script>
+	<script src="/ams_g202/js/products.js"></script>
+
+  	<script src="/ams_g202/js/bootstrap.bundle.min.js"></script>
+	<link href="/ams_g202/css/bootstrap.css" rel="stylesheet">
+	  
+	<script src="/ams_g202/js/universal-parallax.min.js"></script>
+	<script src="/ams_g202/js/imgur.js"></script>
+
+  	<link href="/ams_g202/fonts/fontawesome/css/all.min.css" rel="stylesheet">
+  	<link href="/ams_g202/fonts/feathericons/css/iconfont.css" rel="stylesheet">
+  	<link href="/ams_g202/fonts/material-icons/css/materialdesignicons.css" rel="stylesheet">
+
+  	<link href="/ams_g202/css/ui.css" rel="stylesheet">
+  	<script src="/ams_g202/js/script.js"></script>
+</head>
+<body>
+	<header class="section-header">
+		<section class="header-main border-bottom">
+			<div class="container">
+				<div class="row align-items-center justify-content-between">
+					<div class="col-lg-3 col-sm-4 col-md-4 col-5">
+						<a class="navbar-brand" href="/ams_g202/marketplace/">
+							<img src="/ams_g202/images/logo.svg" class="logo" alt="">
+							<span class="font-weight-bolder text-success">Eco</span>Market
+						</a>
+					</div>
+					<div class="col-lg-4 col-xl-5 col-sm-8 col-md-4 d-none d-md-block">
+							<form action="#" class="search">
+								<div class="input-group w-100">
+									<input type="search" name="search" autocomplete="off" class="form-control" style="width:55%;" placeholder="Procurar produto..." required>
+									<div class="input-group-append">
+									<button class="btn btn-primary" type="submit">
+										<i class="fa fa-search"></i>
+									</button>
+									</div>
+								</div>
+							</form> <!-- search-wrap .end// -->
+					</div> <!-- col.// -->
+					<div class="col-lg-3 col-sm-8 col-md-4 col-7">
+						<div class="d-flex justify-content-end">
+							<a href="#" class="widget-header mr-3" data-toggle="tooltip" data-placement="bottom" title="Pedidos">
+								<div class="icon">
+									<i class="icon-sm rounded-circle border fa fa-clipboard-list"></i>
+									<span class="notify">0</span>
+								</div>
+							</a>
+				
+							<div class="widget-header dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">
+									<div class="icon icon-sm rounded-circle border" data-toggle="tooltip" data-placement="bottom" title="Menu">
+										<i class="fa fa-user"></i>
+									</div>
+									<span class="sr-only">Ações</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<a class="dropdown-item" href="account_producer">Conta</a>
+									<a class="dropdown-item" href="#">Pedidos</a>
+									<hr class="dropdown-divider">
+									<a class="dropdown-item" href="#">Definições</a>
+									<hr class="dropdown-divider">
+									<a class="dropdown-item" href="login">Terminar sessão</a>
+								</div> <!--  dropdown-menu .// -->
+							</div>  <!-- widget-header .// -->
+						</div> <!-- widgets-wrap.// -->
+					</div> <!-- col.// -->
+				</div> <!-- row.// -->
+			</div> <!-- container.// -->
+		</section> <!-- header-main .// -->
+		
+		<nav class="navbar navbar-expand-md navbar-main border-bottom d-md-none">
+		  <div class="container justify-content-center">
+				<form class="col-12 col-sm-8 my-2">
+					<div class="input-group">
+						<input type="search" name="search" autocomplete="off" class="form-control" placeholder="Procurar..." required>
+						<div class="input-group-append">
+							<button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+						</div>
+					</div>
+				</form>
+			   </div> <!-- collapse .// -->
+		  </div> <!-- container .// -->
+		</nav>
+		
+	</header> <!-- section-header.// -->
+
+
+
+	<!-- ========================= MODAL #NEW CONTENT ========================= -->
+	<div class="modal fade" id="new" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+			<div class="modal-content shadow-lg">
+				<div class="modal-header">
+					<h5 class="modal-title mx-3" id="exampleModalLabel3">Vender novo produto</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form class="my-3 mx-3" id="publish" action="">
+						<div class="form-group form-row">
+							<label class="col-md-3 col-form-label">Categoria</label>
+							<div class="col-sm-9 pt-1">
+								<label class="custom-control custom-radio custom-control-inline">
+									<input class="custom-control-input" type="radio" name="category" value="Fruta" checked>
+								  	<span class="custom-control-label">Fruta</span>
+								</label>
+								<label class="custom-control custom-radio custom-control-inline">
+								  	<input class="custom-control-input" type="radio" name="category" value="Legume">
+								  	<span class="custom-control-label">Legume</span>
+								</label>
+							</div>
+						</div>
+
+						<div class="form-group form-row">
+							<label class="col-md-3 col-form-label">Designação</label>
+							<div class="col">
+								<input class="form-control" placeholder="Designação" type="text" name="name" required>
+							</div>
+						</div>
+
+						<div class="form-group form-row">
+							<label class="col-md-3 col-form-label">Preço</label>
+							<div class="col">
+								<input class="form-control" placeholder="Preço em €" type="number" min="0.01" max="20" step="0.01" name="price" required>
+							</div>
+						</div>
+
+						<div class="form-group form-row">
+							<label class="col-md-3 col-form-label">Quantidade</label>
+							<div class="col">
+								<input class="form-control" placeholder="Quantidade disponível em kg" min="1" step="1" type="number" name="quantity_left" required>
+							</div>
+						</div>
+
+						<div class="form-group form-row">
+							<label class="col-md-3 col-form-label">Descrição</label>
+							<div class="col">
+								<textarea class="form-control" placeholder="Pequena descrição sobre o produto" rows="4" name="description" required></textarea>
+							</div>
+						</div>
+
+						<div class="form-group form-row">
+							<label class="col-md-3 col-form-label">Origem</label>
+							<div class="col">
+								<input class="form-control" placeholder="Local de origem" type="text" name="origin" required>
+							</div>
+						</div>
+
+						<div class="form-group form-row">
+							<label class="col-md-3 col-form-label">Variedade</label>
+							<div class="col">
+								<input class="form-control" placeholder="Variedade" type="text" name="variety" required>
+							</div>
+						</div>
+
+						<div class="form-group form-row">
+							<label class="col-md-3 col-form-label">Época</label>
+							<div class="col">
+								<input class="form-control" placeholder="Época ideal" type="text" name="season" required>
+							</div>
+						</div>
+
+						<div class="form-group form-row align-items-center">
+							<label class="col-md-3 col-form-label">Imagem ilustrativa</label>
+							<div class="col">
+								<div class="dropzone form-control">
+									<div class="info text-muted"></div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group pt-3">
+							<button type="submit" class="btn btn-primary btn-block">Publicar novo produto</button>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ========================= MODAL #NEW END// ========================= -->
+
+
+
+	<!-- ========================= SECTION CONTENT ========================= -->
+	<section class="section-content padding-y bg">
+		<div class="container">
+
+			<div class="row justify-content-center">
+				<main class="col-md-9">
+
+					<header class="border-bottom mb-4 pb-3">
+						<div class="form-inline">
+							<span class="mr-md-auto">A vender <b id="product_counter">0</b> produtos neste momento</span>
+							<button class="btn btn-primary mr-4" data-toggle="modal" data-target="#new"><i class="fas fa-plus mr-1"></i> Vender novo produto</button>
+							<div class="btn-group">
+								<a href="#" class="btn btn-outline-secondary" data-toggle="tooltip" title="Vista de lista"> <i class="fa fa-bars"></i></a>
+								<a href="#" class="btn  btn-outline-secondary active" data-toggle="tooltip" title="Vista de grelha"> <i class="fa fa-th"></i></a>
+							</div>
+						</div>
+					</header><!-- sect-heading -->
+
+					<div class="row" id="sell"></div>
+
+					<div class="lead text-center my-5 py-5" id="empty">
+						<p>De momento não está a vender nenhum produto.</p>
+						<p>Clique no botão "Vender novo produto" para publicar os seus alimentos para venda!</p>
+					</div>
+
+					<nav class="mt-4 d-flex justify-content-center" aria-label="Page navigation sample">
+						<ul class="pagination" id="pagination" style="display: none;">
+							<li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+							<li class="page-item active"><a class="page-link" href="#">1</a></li>
+							<li class="page-item disabled"><a class="page-link" href="#">Seguinte</a></li>
+						</ul>
+					</nav>
+
+				</main> <!-- col.// -->
+			</div>
+
+		</div> <!-- container .//  -->
+	</section>
+	<!-- ========================= SECTION CONTENT END// ========================= -->
+
+	<footer class="section-footer border-top shadow pt-2 pb-2">
+		<div class="container">
+			<section class="footer-copyright d-flex align-items-center justify-content-between">
+				<p class="mt-0 pt-3 text-muted">© 2021 EcoMarket</p>
+				<div class="mt-0">
+					<a href="mailto:ecomarket@ua.pt" class="btn btn-light">
+						<img src="/ams_g202/images/icons/support.png" alt="" width="25" style="filter: contrast(0.4);">
+						<span class="ml-1 text-secondary">Apoio ao Cliente</span>
+					</a>
+				</div>
+			</section>
+		</div>
+	</footer>
+
+	<script>
+		$(document).ready(function(){
+			var counter = 0; 	// Total of products that the producer is selling
+
+			for (var key in products){
+				// Search through all the products in the list and check which products the producer is selling
+				if (products.hasOwnProperty(key) && products[key].producer == ecomarket_user.name){
+					$("#empty").hide();
+					$("#pagination").show();
+					$("#sell").append(`
+						<div class="col-lg-4 col-sm-6">
+							<figure class="card card-product-grid">
+								<div class="img-wrap">
+									<a href="#">
+										<span class="badge badge-warning">`+ products[key].new +`</span>
+										<span class="badge badge-danger">`+ products[key].sale +`</span>
+										<img src="`+ products[key].image +`" alt="">
+										<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Zoom</a>
+									</a>
+								</div>
+								<figcaption class="info-wrap">
+									<a href="#">
+										<p class="title mb-1">`+ products[key].name +`</p>
+										<div class="price-wrap mb-3">
+											<span class="price">`+ products[key].price +`€</span>
+											<del class="`+ (products[key].sale).toLowerCase().slice(0, 5) +` price-old" style="display: none;">`+ products[key].old_price +`€</del>
+											<small class="text-muted"> /kg</small>
+										</div>
+										<p class="my-3 text-muted small font-weight-bold">Quantidade restante: `+ products[key].quantity_left +` kg</p>
+									</a>
+									<div class="text-center">
+										<a href="#" class="btn btn-primary mr-3"><i class="fas fa-pencil-alt mr-2"></i> Editar</a>
+										<a href="#" class="btn btn-danger remove-button"><i class="fas fa-trash-alt mr-2"></i> Remover</a>
+									</div>
+								</figcaption>
+							</figure>
+						</div>
+					`);
+					counter++;
+				}
+			}
+
+			$("#product_counter").text(counter);
+
+			$(".remove-button").click(function(){
+				var sure = confirm("Tem a certeza que pretende parar de vender este produto?\nEsta ação é irreversível, terá de colocar novamente o produto à venda.");
+				if (sure){
+					$(this).closest("div.col-lg-4.col-sm-6").remove();
+					var count = $("b#product_counter").text();
+					$("b#product_counter").text(--count);
+					if ($("#product_counter").text()<1){
+						$("#empty").show();
+						$("#pagination").hide();
+					}
+				}
+			});
+
+			var feedback = function(res){
+				if (res.success === true){
+					var get_link = res.data.link.replace(/^http:\/\//i, 'https://');
+					document.querySelector('.status').classList.add('mt-2');
+					document.querySelector('.status').innerHTML = 'Imagem: ' + '<br><input name="image" class="image-url form-control text-center mt-1 mb-2" readonly value=\"' + get_link + '\"/>' + '<img class="img rounded" alt="" src=\"' + get_link + '\"/>';
+				}
+			};
+
+			new Imgur({
+				clientid: '4409588f10776f7',
+				callback: feedback
+			});
+
+			$('#publish').on('submit', function(e){
+				if (typeof(Storage) !== "undefined"){
+					
+					if (products.reverse()){
+						// Get values from the new product publish form
+						var id = (Object.keys(products).length + 1).toString();
+						var category = $("#publish input[name=category]:checked").val();
+						var name = $("#publish input[name=name]").val();
+						var price = Number($("#publish input[name=price]").val()).toFixed(2).replace(/\./g, ',');
+						var quantity_left = Number($("#publish input[name=quantity_left]").val()).toString();
+						var description = $("#publish textarea[name=description]").val();
+						var origin = $("#publish input[name=origin]").val();
+						var variety = $("#publish input[name=variety]").val();
+						var season = $("#publish input[name=season]").val();
+						if(!$("#publish input[name=image]").val()){
+							var image = "/ams_g202/images/products/product.jpg";
+						} else{
+							var image = $("#publish input[name=image]").val();
+						}
+						
+						// Add the newly created product
+						products.push(
+							{
+								id: id,
+								category: category,
+								new: "NOVIDADE",
+								sale: "",
+								old_price: "",
+								image: image,
+								name: name,
+								price: price,
+								producer: ecomarket_user.name,
+								quantity_left: quantity_left,
+								description: description,
+								origin: origin,
+								variety: variety,
+								season: season,
+								orders: "0",
+								feedback: []
+							}
+						);
+
+						// Update products data on the storage item
+						localStorage.setItem('ecomarket_products', JSON.stringify(products));
+					}
+
+				} else{
+					// Browser does not support web storage
+					window.location.replace("/ams_g202/marketplace/error");
+				}
+				
+			});
+		});
+	</script>
+
+</body>
+</html>
