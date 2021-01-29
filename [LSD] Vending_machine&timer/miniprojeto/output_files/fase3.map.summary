@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Jun 01 14:21:23 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : fase3
+Top-level Entity Name : fase3
+Family : Cyclone IV E
+Total logic elements : 263
+    Total combinational functions : 262
+    Dedicated logic registers : 112
+Total registers : 112
+Total pins : 23
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
