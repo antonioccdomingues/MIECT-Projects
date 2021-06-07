@@ -8,6 +8,9 @@ To Run the app <br />
 ## Live info about airplanes arriving LPPT Airport
 <img src="live_info.png" alt="" width="600" />
 
+## Live info about airplanes arriving LPPT Airport in a Map
+<img src="map_info.png" alt="" width="600" />
+
 ## History
 <img src="history.png" alt="" width="600" />
 
