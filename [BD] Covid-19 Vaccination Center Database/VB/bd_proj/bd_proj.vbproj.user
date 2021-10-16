@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="AddEnfermeiro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddMarcacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Enfermeiros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Marcacoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RemoveStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Stock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
