@@ -1,0 +1,34 @@
+Jun 07 16:29:19.927 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+Jun 07 16:29:19.927 HYPERVISOR: Started on IP = localhost, TCP port = 60371.
+Jun 07 16:29:19.937 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 07 16:29:19.938 HYPERVISOR: exec_cmd: hypervisor working_dir /home/tiago/Github/ar-projecto/fase2/gns3/project-files/dynamips 
+Jun 07 16:29:19.938 GENERAL: working_dir=/home/tiago/Github/ar-projecto/fase2/gns3/project-files/dynamips
+Jun 07 16:29:19.938 HYPERVISOR: exec_cmd: hypervisor working_dir /home/tiago/Github/ar-projecto/fase2/gns3/project-files/dynamips/c14bcde5-4251-4c13-9972-b069a0ddad5d 
+Jun 07 16:29:19.938 GENERAL: working_dir=/home/tiago/Github/ar-projecto/fase2/gns3/project-files/dynamips/c14bcde5-4251-4c13-9972-b069a0ddad5d
+Jun 07 16:29:19.938 HYPERVISOR: exec_cmd: vm create ISP_US 13 c3725 
+Jun 07 16:29:19.938 VM: VM ISP_US created.
+Jun 07 16:29:19.939 HYPERVISOR: exec_cmd: vm set_con_tcp_port ISP_US 5073 
+Jun 07 16:29:19.939 HYPERVISOR: exec_cmd: c3725 get_mac_addr ISP_US 
+Jun 07 16:29:19.939 HYPERVISOR: exec_cmd: vm set_disk0 ISP_US 0 
+Jun 07 16:29:19.939 HYPERVISOR: exec_cmd: vm get_status ISP_US 
+Jun 07 16:29:19.939 HYPERVISOR: exec_cmd: vm set_idle_pc ISP_US 0x60a68e70 
+Jun 07 16:29:19.940 HYPERVISOR: exec_cmd: vm set_ios ISP_US /home/tiago/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jun 07 16:29:19.940 HYPERVISOR: exec_cmd: c3725 set_mac_addr ISP_US c20d.245d.0000 
+Jun 07 16:29:19.940 HYPERVISOR: exec_cmd: vm set_nvram ISP_US 256 
+Jun 07 16:29:19.941 HYPERVISOR: exec_cmd: vm get_status ISP_US 
+Jun 07 16:29:19.941 HYPERVISOR: exec_cmd: vm slot_add_binding ISP_US 1 0 NM-1FE-TX 
+Jun 07 16:29:21.371 HYPERVISOR: exec_cmd: nio create_udp udp-e5d30ac1-4025-44a4-b443-c6b3cc7582b2 10010 127.0.0.1 10011 
+Jun 07 16:29:21.586 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ISP_US 0 1 udp-e5d30ac1-4025-44a4-b443-c6b3cc7582b2 
+Jun 07 16:29:21.587 HYPERVISOR: exec_cmd: vm get_status ISP_US 
+Jun 07 16:29:31.342 HYPERVISOR: exec_cmd: nio create_udp udp-c2a02543-f461-4481-bbc0-c1056a66a724 10240 127.0.0.1 10241 
+Jun 07 16:29:31.344 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ISP_US 0 0 udp-c2a02543-f461-4481-bbc0-c1056a66a724 
+Jun 07 16:29:31.344 HYPERVISOR: exec_cmd: vm get_status ISP_US 
+Jun 07 20:58:27.291 HYPERVISOR: exec_cmd: vm get_status ISP_US 
+Jun 07 20:58:27.293 HYPERVISOR: exec_cmd: vm extract_config ISP_US 
+Jun 07 20:58:29.216 HYPERVISOR: exec_cmd: vm get_status ISP_US 
+Jun 07 20:58:29.219 HYPERVISOR: exec_cmd: vm extract_config ISP_US 
+Jun 07 20:58:29.220 HYPERVISOR: exec_cmd: vm delete ISP_US 
+Jun 07 20:58:29.220 VM: VM ISP_US destroyed.
+Jun 07 20:58:29.221 HYPERVISOR: exec_cmd: hypervisor stop 
+Jun 07 20:58:29.602 HYPERVISOR: Stopped.
+Jun 07 20:58:29.602 GENERAL: reset done.

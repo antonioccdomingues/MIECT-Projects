@@ -1,0 +1,114 @@
+##Core 1
+
+##vlans
+vlan database
+vlan 1
+vlan 26
+vlan 25
+vlan 101
+exit
+write
+
+
+conf t
+int vlan 25
+ip address 10.6.32.104 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0620::5/64
+ipv6 ospf 1 area 0
+no shut
+exit
+
+int vlan 26
+ip address 10.6.64.104 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0640::5/64
+ipv6 ospf 1 area 0
+no shut
+exit
+
+int vlan 101
+no shut
+ip address 10.101.0.106 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:101:0::7/64					
+ipv6 ospf 1 area 0
+exit
+end
+write
+
+##confsss
+conf t
+ip routing
+ipv6 unicast-routing
+ipv6 router ospf 1
+router-id 7.7.7.7
+end
+write
+
+## confs
+conf t
+int range f1/3 - 12
+no shut
+switchport mode trunk
+switchport trunk allowed vlan 1,25,26,101,1002-1005
+
+int f0/0 
+ip address 10.7.0.1 255.255.255.252
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0700::1/126
+ipv6 ospf 1 area 0					
+no shut
+int f0/1
+ip ospf 1 area 0
+ip address 10.7.0.5 255.255.255.252
+ipv6 enable
+ipv6 address 3100:10:10:0700::5/126
+ipv6 ospf 1 area 0		
+no shut
+end
+write
+
+
+######################FALTAM AS RESTANTES MERDAS
+
+###DHCP
+
+conf t
+service dhcp
+int vlan 1
+ip helper-address 10.9.0.1
+ipv6 nd managed-config-flag
+ipv6 dhcp relay destination 3100:10:10:0900::10
+int vlan 26
+ip helper-address 10.9.0.1
+ipv6 nd managed-config-flag
+ipv6 dhcp relay destination 3100:10:10:0900::10
+int vlan 25
+ip helper-address 10.9.0.1
+ipv6 nd managed-config-flag
+ipv6 dhcp relay destination 3100:10:10:0900::10
+int vlan 101
+ip helper-address 10.9.0.1
+ipv6 nd managed-config-flag
+ipv6 dhcp relay destination 3100:10:10:0900::10
+int vlan 102
+ip helper-address 10.9.0.1
+ipv6 nd managed-config-flag
+ipv6 dhcp relay destination 3100:10:10:0900::10
+end
+write
+
+
+
+
+
+
+
+
+
+

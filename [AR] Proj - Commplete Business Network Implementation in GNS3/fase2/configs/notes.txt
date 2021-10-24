@@ -1,0 +1,16 @@
+DONE:
+
+▪Configuração da camada de acesso e definição da interligação/endereçamento dos equipamentos. (1.0pontos) (DONE)
+▪Configuração das redes locais/end-to-end virtuais (VLAN) e trunks. (2.0 pontos) (DONE)
+▪Configuração do encaminhamento unicast IPv4 e IPV6. (3.0 pontos) (DONE) // falta adicionar rosta estatica do loopback da antena
+▪Configuração da política de encaminhamento pela ligação de micro-ondas. (1.5 pontos) (DONE)
+▪Implementação de mecanismos de tradução de endereços privados, assumindo que ambos os acessos à Internet estão ativos e existe a possibilidade de encaminhamento assimétrico na Internet. (1.0 pontos) (DONE)
+▪Configuração de um servidor DHCPv4 e DHCPv6 para pelos menos 4 VLAN. (1.5 pontos) (DONE)
+▪Configuração das ligações seguras dentro e entre pólos (e respetivo encaminhamento). (1.5 pontos) (DENTO DO POL FUNCIONA; FORA NÂO)
+▪Configuração do(s) servidor(es) DNS da empresa. (1.5 pontos) (DONE)
+▪Definição de mecanismos de controlo de acesso em Layer2, para uma VLAN. (1.5 pontos) (DONE)
+
+FALTA:
+▪Configuração   de   mecanismos   de   transição   IPv6/IPv4.   Assumindo   que   é   necessário   garantir   aconectividade IPv6 total entre os pólos em caso de falha completa do ISP PT1. (1.5 pontos)
+▪Script de gestão/monitorização (linguagens: bash, python, javascript, etc...) para deteção de  routers  eswitches ativos numa rede; reportando a versão do respetivo sistema operativo, os seus interfaces ativos eos endereços IP configurados. (2.0 pontos)
+▪Implementação de controlo de fluxos na fronteira de um dos pólos da empresa com a Internet (semredundância). (2.0 pontos)

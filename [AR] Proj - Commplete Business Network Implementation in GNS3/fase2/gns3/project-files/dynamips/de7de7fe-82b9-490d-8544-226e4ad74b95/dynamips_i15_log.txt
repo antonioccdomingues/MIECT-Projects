@@ -1,0 +1,16 @@
+Jun 21 11:07:30.292 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+Jun 21 11:07:30.292 HYPERVISOR: Started on IP = localhost, TCP port = 48547.
+Jun 21 11:07:30.302 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 21 11:07:30.303 HYPERVISOR: exec_cmd: hypervisor working_dir /home/tiago/Github/ar-projecto/fase2/gns3/project-files/dynamips 
+Jun 21 11:07:30.303 GENERAL: working_dir=/home/tiago/Github/ar-projecto/fase2/gns3/project-files/dynamips
+Jun 21 11:07:30.303 HYPERVISOR: exec_cmd: ethsw create Switch5 
+Jun 21 11:07:35.969 HYPERVISOR: exec_cmd: nio create_udp udp-135e8499-c715-45be-b52b-c25ed3c55ce6 10008 127.0.0.1 10009 
+Jun 21 11:07:35.969 HYPERVISOR: exec_cmd: ethsw add_nio Switch5 udp-135e8499-c715-45be-b52b-c25ed3c55ce6 
+Jun 21 11:07:35.979 HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-135e8499-c715-45be-b52b-c25ed3c55ce6 1 
+Jun 21 11:07:48.594 HYPERVISOR: exec_cmd: nio create_udp udp-8a6548d9-b274-4e18-bca4-bc9dc8fd69b5 10253 127.0.0.1 10252 
+Jun 21 11:07:48.594 HYPERVISOR: exec_cmd: ethsw add_nio Switch5 udp-8a6548d9-b274-4e18-bca4-bc9dc8fd69b5 
+Jun 21 11:07:48.599 HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-8a6548d9-b274-4e18-bca4-bc9dc8fd69b5 1 
+Jun 21 11:08:00.609 HYPERVISOR: exec_cmd: ethsw delete Switch5 
+Jun 21 11:08:00.639 HYPERVISOR: exec_cmd: hypervisor stop 
+Jun 21 11:08:00.829 HYPERVISOR: Stopped.
+Jun 21 11:08:00.829 GENERAL: reset done.

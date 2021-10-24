@@ -1,0 +1,34 @@
+May 31 09:39:33.750 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+May 31 09:39:33.750 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 56999.
+May 31 09:39:33.759 HYPERVISOR: exec_cmd: hypervisor version 
+May 31 09:39:33.759 HYPERVISOR: exec_cmd: hypervisor working_dir /home/antonio/GNS3/projects/fase2/project-files/dynamips 
+May 31 09:39:33.759 GENERAL: working_dir=/home/antonio/GNS3/projects/fase2/project-files/dynamips
+May 31 09:39:33.760 HYPERVISOR: exec_cmd: hypervisor working_dir /home/antonio/GNS3/projects/fase2/project-files/dynamips/17e058f6-f32f-4d7a-ae22-63f0554eed6a 
+May 31 09:39:33.760 GENERAL: working_dir=/home/antonio/GNS3/projects/fase2/project-files/dynamips/17e058f6-f32f-4d7a-ae22-63f0554eed6a
+May 31 09:39:33.760 HYPERVISOR: exec_cmd: vm create ESW3 3 c3725 
+May 31 09:39:33.760 VM: VM ESW3 created.
+May 31 09:39:33.760 HYPERVISOR: exec_cmd: vm set_con_tcp_port ESW3 5005 
+May 31 09:39:33.761 HYPERVISOR: exec_cmd: c3725 get_mac_addr ESW3 
+May 31 09:39:33.761 HYPERVISOR: exec_cmd: vm set_disk0 ESW3 1 
+May 31 09:39:33.761 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 31 09:39:33.762 HYPERVISOR: exec_cmd: vm set_idle_pc ESW3 0x60a68e70 
+May 31 09:39:33.763 HYPERVISOR: exec_cmd: vm set_ios ESW3 /home/antonio/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+May 31 09:39:33.764 HYPERVISOR: exec_cmd: c3725 set_mac_addr ESW3 c203.1fa9.0000 
+May 31 09:39:33.764 HYPERVISOR: exec_cmd: vm set_nvram ESW3 256 
+May 31 09:39:33.764 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 31 09:39:33.764 HYPERVISOR: exec_cmd: vm slot_add_binding ESW3 1 0 NM-16ESW 
+May 31 09:39:37.388 HYPERVISOR: exec_cmd: nio create_udp udp-2a584faa-361b-414f-b9e5-ec908437fa3c 10070 127.0.0.1 10071 
+May 31 09:39:37.602 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW3 1 14 udp-2a584faa-361b-414f-b9e5-ec908437fa3c 
+May 31 09:39:37.602 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 31 09:39:37.907 HYPERVISOR: exec_cmd: nio create_udp udp-8e0300d3-c22c-4514-a7a2-219f8f842924 10076 127.0.0.1 10077 
+May 31 09:39:37.909 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW3 1 13 udp-8e0300d3-c22c-4514-a7a2-219f8f842924 
+May 31 09:39:37.909 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 31 09:40:21.238 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 31 09:40:21.239 HYPERVISOR: exec_cmd: vm extract_config ESW3 
+May 31 09:40:21.539 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 31 09:40:21.540 HYPERVISOR: exec_cmd: vm extract_config ESW3 
+May 31 09:40:21.540 HYPERVISOR: exec_cmd: vm delete ESW3 
+May 31 09:40:21.540 VM: VM ESW3 destroyed.
+May 31 09:40:21.541 HYPERVISOR: exec_cmd: hypervisor stop 
+May 31 09:40:21.802 HYPERVISOR: Stopped.
+May 31 09:40:21.802 GENERAL: reset done.

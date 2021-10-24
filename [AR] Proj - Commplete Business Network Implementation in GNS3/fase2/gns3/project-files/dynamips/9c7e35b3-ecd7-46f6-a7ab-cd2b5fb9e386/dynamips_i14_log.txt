@@ -1,0 +1,71 @@
+Jun 16 16:11:36.683 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+Jun 16 16:11:36.683 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 49979.
+Jun 16 16:11:36.692 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 16 16:11:36.692 HYPERVISOR: exec_cmd: hypervisor working_dir /home/antonio/Desktop/AR/PROJETO/ar-projeto/fase2/gns3/project-files/dynamips 
+Jun 16 16:11:36.692 GENERAL: working_dir=/home/antonio/Desktop/AR/PROJETO/ar-projeto/fase2/gns3/project-files/dynamips
+Jun 16 16:11:36.693 HYPERVISOR: exec_cmd: hypervisor working_dir /home/antonio/Desktop/AR/PROJETO/ar-projeto/fase2/gns3/project-files/dynamips/1c6b2402-44d1-473a-b473-9db45f793ada 
+Jun 16 16:11:36.693 GENERAL: working_dir=/home/antonio/Desktop/AR/PROJETO/ar-projeto/fase2/gns3/project-files/dynamips/1c6b2402-44d1-473a-b473-9db45f793ada
+Jun 16 16:11:36.693 HYPERVISOR: exec_cmd: vm create CORE2 10 c3725 
+Jun 16 16:11:36.693 VM: VM CORE2 created.
+Jun 16 16:11:36.693 HYPERVISOR: exec_cmd: vm set_con_tcp_port CORE2 5067 
+Jun 16 16:11:36.694 HYPERVISOR: exec_cmd: c3725 get_mac_addr CORE2 
+Jun 16 16:11:36.694 HYPERVISOR: exec_cmd: vm set_disk0 CORE2 1 
+Jun 16 16:11:36.694 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:36.695 HYPERVISOR: exec_cmd: vm set_idle_pc CORE2 0x60a68e70 
+Jun 16 16:11:36.695 HYPERVISOR: exec_cmd: vm set_ios CORE2 /home/antonio/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jun 16 16:11:36.696 HYPERVISOR: exec_cmd: c3725 set_mac_addr CORE2 c20a.23fe.0000 
+Jun 16 16:11:36.696 HYPERVISOR: exec_cmd: vm set_nvram CORE2 256 
+Jun 16 16:11:36.697 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:36.697 HYPERVISOR: exec_cmd: vm slot_add_binding CORE2 1 0 NM-16ESW 
+Jun 16 16:11:37.931 HYPERVISOR: exec_cmd: nio create_udp udp-8198f8ad-799d-4b48-bf53-629a8adf0617 10004 127.0.0.1 10005 
+Jun 16 16:11:38.147 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CORE2 1 3 udp-8198f8ad-799d-4b48-bf53-629a8adf0617 
+Jun 16 16:11:38.148 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:42.510 HYPERVISOR: exec_cmd: nio create_udp udp-5baceb6b-2384-4d38-8d97-ab15d35b1370 10090 127.0.0.1 10091 
+Jun 16 16:11:42.511 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CORE2 1 5 udp-5baceb6b-2384-4d38-8d97-ab15d35b1370 
+Jun 16 16:11:42.512 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:42.716 HYPERVISOR: exec_cmd: nio create_udp udp-06aa6db3-94d8-46d7-b150-0d13ea57af5d 10102 127.0.0.1 10103 
+Jun 16 16:11:42.717 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CORE2 1 6 udp-06aa6db3-94d8-46d7-b150-0d13ea57af5d 
+Jun 16 16:11:42.717 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:43.477 HYPERVISOR: exec_cmd: nio create_udp udp-1701b162-7942-4fa0-beb0-ce2e7f7f9935 10130 127.0.0.1 10131 
+Jun 16 16:11:43.478 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CORE2 1 7 udp-1701b162-7942-4fa0-beb0-ce2e7f7f9935 
+Jun 16 16:11:43.479 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:43.578 HYPERVISOR: exec_cmd: nio create_udp udp-c183ee59-9587-49d5-8ce2-8696e4cacc45 10136 127.0.0.1 10137 
+Jun 16 16:11:43.580 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CORE2 1 8 udp-c183ee59-9587-49d5-8ce2-8696e4cacc45 
+Jun 16 16:11:43.580 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:43.679 HYPERVISOR: exec_cmd: nio create_udp udp-097d66bc-612a-48ec-9c08-fdf924f6fbd9 10142 127.0.0.1 10143 
+Jun 16 16:11:43.680 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CORE2 1 9 udp-097d66bc-612a-48ec-9c08-fdf924f6fbd9 
+Jun 16 16:11:43.680 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:43.788 HYPERVISOR: exec_cmd: nio create_udp udp-acd7eea4-3bbe-4210-b08c-eea882e04528 10148 127.0.0.1 10149 
+Jun 16 16:11:43.789 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CORE2 1 10 udp-acd7eea4-3bbe-4210-b08c-eea882e04528 
+Jun 16 16:11:43.789 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:43.889 HYPERVISOR: exec_cmd: nio create_udp udp-8f2ceee0-16b3-4b4e-9931-0675d730e009 10154 127.0.0.1 10155 
+Jun 16 16:11:43.890 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CORE2 1 11 udp-8f2ceee0-16b3-4b4e-9931-0675d730e009 
+Jun 16 16:11:43.890 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:43.985 HYPERVISOR: exec_cmd: nio create_udp udp-ad2caeb2-db3a-4dba-84c4-14d801ca6c71 10160 127.0.0.1 10161 
+Jun 16 16:11:43.986 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CORE2 1 12 udp-ad2caeb2-db3a-4dba-84c4-14d801ca6c71 
+Jun 16 16:11:43.986 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:49.699 HYPERVISOR: exec_cmd: nio create_udp udp-3a863400-26e0-4a29-9985-8cb224e8fbac 10232 127.0.0.1 10233 
+Jun 16 16:11:49.700 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CORE2 0 1 udp-3a863400-26e0-4a29-9985-8cb224e8fbac 
+Jun 16 16:11:49.701 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:11:49.798 HYPERVISOR: exec_cmd: nio create_udp udp-81906f4b-812f-43f8-b8c3-619d7c6ca862 10236 127.0.0.1 10237 
+Jun 16 16:11:49.799 HYPERVISOR: exec_cmd: vm slot_add_nio_binding CORE2 0 0 udp-81906f4b-812f-43f8-b8c3-619d7c6ca862 
+Jun 16 16:11:49.800 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:12:27.049 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Jun 16 16:12:27.049 VM: VM Ghost created.
+Jun 16 16:12:27.078 HYPERVISOR: exec_cmd: vm set_ios Ghost /home/antonio/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jun 16 16:12:27.079 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jun 16 16:12:27.092 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost /home/antonio/Desktop/AR/PROJETO/ar-projeto/fase2/gns3/project-files/dynamips/c3725-advipservicesk9-mz.124-21.image-128.ghost 
+Jun 16 16:12:27.106 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jun 16 16:12:27.107 HYPERVISOR: exec_cmd: vm set_config Ghost configs/i0_startup-config.cfg 
+Jun 16 16:12:27.119 HYPERVISOR: exec_cmd: vm start Ghost 
+Jun 16 16:12:27.456 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Jun 16 16:12:27.456 HYPERVISOR: exec_cmd: vm stop Ghost 
+Jun 16 16:12:27.563 VM: VM Ghost shutdown.
+Jun 16 16:12:27.564 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+Jun 16 16:12:27.565 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Jun 16 16:12:27.565 VM: VM Ghost destroyed.
+Jun 16 16:12:27.567 HYPERVISOR: exec_cmd: vm set_ghost_status CORE2 2 
+Jun 16 16:12:27.568 HYPERVISOR: exec_cmd: vm set_ghost_file CORE2 /home/antonio/Desktop/AR/PROJETO/ar-projeto/fase2/gns3/project-files/dynamips/c3725-advipservicesk9-mz.124-21.image-128.ghost 
+Jun 16 16:12:27.568 HYPERVISOR: exec_cmd: vm get_status CORE2 
+Jun 16 16:12:27.569 HYPERVISOR: exec_cmd: vm set_config CORE2 configs/i10_startup-config.cfg 
+Jun 16 16:12:27.570 HYPERVISOR: exec_cmd: vm start CORE2 

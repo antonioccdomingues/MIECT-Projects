@@ -1,0 +1,34 @@
+May 31 09:39:33.906 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+May 31 09:39:33.906 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 33471.
+May 31 09:39:33.916 HYPERVISOR: exec_cmd: hypervisor version 
+May 31 09:39:33.916 HYPERVISOR: exec_cmd: hypervisor working_dir /home/antonio/GNS3/projects/fase2/project-files/dynamips 
+May 31 09:39:33.916 GENERAL: working_dir=/home/antonio/GNS3/projects/fase2/project-files/dynamips
+May 31 09:39:33.916 HYPERVISOR: exec_cmd: hypervisor working_dir /home/antonio/GNS3/projects/fase2/project-files/dynamips/5ab7e864-9a96-485a-b087-624e59f1c009 
+May 31 09:39:33.916 GENERAL: working_dir=/home/antonio/GNS3/projects/fase2/project-files/dynamips/5ab7e864-9a96-485a-b087-624e59f1c009
+May 31 09:39:33.917 HYPERVISOR: exec_cmd: vm create ESW6 6 c3725 
+May 31 09:39:33.917 VM: VM ESW6 created.
+May 31 09:39:33.917 HYPERVISOR: exec_cmd: vm set_con_tcp_port ESW6 5015 
+May 31 09:39:33.917 HYPERVISOR: exec_cmd: c3725 get_mac_addr ESW6 
+May 31 09:39:33.918 HYPERVISOR: exec_cmd: vm set_disk0 ESW6 1 
+May 31 09:39:33.918 HYPERVISOR: exec_cmd: vm get_status ESW6 
+May 31 09:39:33.918 HYPERVISOR: exec_cmd: vm set_idle_pc ESW6 0x60a68e70 
+May 31 09:39:33.919 HYPERVISOR: exec_cmd: vm set_ios ESW6 /home/antonio/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+May 31 09:39:33.919 HYPERVISOR: exec_cmd: c3725 set_mac_addr ESW6 c206.1fff.0000 
+May 31 09:39:33.920 HYPERVISOR: exec_cmd: vm set_nvram ESW6 256 
+May 31 09:39:33.920 HYPERVISOR: exec_cmd: vm get_status ESW6 
+May 31 09:39:33.920 HYPERVISOR: exec_cmd: vm slot_add_binding ESW6 1 0 NM-16ESW 
+May 31 09:39:38.664 HYPERVISOR: exec_cmd: nio create_udp udp-43b55f77-6e80-4ac8-bbba-3e7e2cd7dffa 10092 127.0.0.1 10093 
+May 31 09:39:38.880 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW6 1 14 udp-43b55f77-6e80-4ac8-bbba-3e7e2cd7dffa 
+May 31 09:39:38.880 HYPERVISOR: exec_cmd: vm get_status ESW6 
+May 31 09:39:39.073 HYPERVISOR: exec_cmd: nio create_udp udp-693a27bb-ce30-46ed-adbc-e17cefb55f8d 10100 127.0.0.1 10101 
+May 31 09:39:39.074 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW6 1 13 udp-693a27bb-ce30-46ed-adbc-e17cefb55f8d 
+May 31 09:39:39.075 HYPERVISOR: exec_cmd: vm get_status ESW6 
+May 31 09:40:21.259 HYPERVISOR: exec_cmd: vm get_status ESW6 
+May 31 09:40:21.260 HYPERVISOR: exec_cmd: vm extract_config ESW6 
+May 31 09:40:21.816 HYPERVISOR: exec_cmd: vm get_status ESW6 
+May 31 09:40:21.817 HYPERVISOR: exec_cmd: vm extract_config ESW6 
+May 31 09:40:21.817 HYPERVISOR: exec_cmd: vm delete ESW6 
+May 31 09:40:21.817 VM: VM ESW6 destroyed.
+May 31 09:40:21.817 HYPERVISOR: exec_cmd: hypervisor stop 
+May 31 09:40:21.958 HYPERVISOR: Stopped.
+May 31 09:40:21.958 GENERAL: reset done.

@@ -1,0 +1,18 @@
+Simplificações para a SEGUNDA FASE do projeto (GNS3)
+
+Para a segunda fase na implementação do projeto de rede de AR (GNS3), podem assumir as seguintes simplificações:
+- Nos polos mais pequenos, considerem apenas os routers de acesso à Internet (incluindo o router do link de micro-ondas), um switch layer 2 e um terminal de teste. No limite podem só usar um router fronteira.
+
+- Simulem a ligação de micro-ondas com um router de cada lado e uma ligação ponto a ponto Ethernet entre o polo maior e um dos mais pequenos.
+
+- Definam uma (V)LAN em cada polo que seja o destino/origem do tráfego que usa a ligação de micro-ondas.
+
+- Definam as (V)LAN que sejam o destino/origem do tráfego para o qual deverá ser garantida a confidencialidade.
+
+- No polo maior,
+    * Implementem apenas duas zonas de distribuição;
+    * A camada de acesso pode ser simplificada com apenas um switch layer 2 por zona de distribuição;
+    * Mantenham toda a redundância layer 3!;
+    * Configurem em cada zona de distribução apenas duas VLAN locais e uma das VLAN end-to-end;
+    * Coloquem um terminal de teste em cada VLAN local e dois na VLAN end-to-end;
+    * Os servidores DNS e DHCP e ferramentas de gestão/monitorização estarão num datacenter central e/ou DMZ.   Podem implementar todos na mesma 

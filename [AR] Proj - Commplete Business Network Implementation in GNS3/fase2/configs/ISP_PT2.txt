@@ -1,0 +1,82 @@
+conf t
+ip routing
+ipv6 unicast-routing
+int f0/1
+no shut
+ip address 10.7.0.14 255.255.255.252
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0700::E/126
+ipv6 ospf 1 area 0					
+int f1/0
+no shut
+ip address 10.7.0.6 255.255.255.252
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0700::6/126
+ipv6 ospf 1 area 0
+int f0/0
+no shut
+ip address 10.7.0.18 255.255.255.252
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0700::12/126 
+ipv6 ospf 1 area 0
+int f1/1
+ip address 100.0.0.2 255.255.255.0
+ipv6 enable
+ipv6 address 2001:0:0:0::1/64
+no shut
+end
+write
+
+
+##Lisboa   para onde vai, e qual o next hop
+conf t
+ip route 200.1.1.0 255.255.255.128 f1/1
+ipv6 route 3100:10:10:2000::/52 f1/1 3100:10:10:1000::3
+end
+
+##S.Francisco
+conf t
+ip route 200.1.1.128 255.255.255.128 f1/1
+ipv6 route 3100:10:10:4000::/52 f1/1 3100:10:10:1000::4
+
+
+router ospf 1
+default-information originate always
+ipv6 router ospf 1
+default-information originate always
+end
+write
+
+
+##NAT
+conf t
+int f1/1
+ip nat outside
+
+int f0/0
+ip nat inside
+int f0/1
+ip nat inside
+int f1/0
+ip nat inside
+
+ip access-list standard SNAT
+permit 10.0.0.0 0.255.255.255
+
+ip nat pool SNAT 200.1.0.129 200.1.0.158 netmask 255.255.255.224
+
+ip nat stateful id 1
+backup 10.7.0.18
+peer 10.7.0.17
+mapping-id 1
+exit
+
+ip nat inside source list SNAT pool SNAT mapping-id 1 overload
+end
+write
+
+
+

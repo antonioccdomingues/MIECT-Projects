@@ -1,0 +1,36 @@
+Jun 16 16:11:36.582 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+Jun 16 16:11:36.582 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 60559.
+Jun 16 16:11:36.591 HYPERVISOR: exec_cmd: hypervisor version 
+Jun 16 16:11:36.592 HYPERVISOR: exec_cmd: hypervisor working_dir /home/antonio/Desktop/AR/PROJETO/ar-projeto/fase2/gns3/project-files/dynamips 
+Jun 16 16:11:36.592 GENERAL: working_dir=/home/antonio/Desktop/AR/PROJETO/ar-projeto/fase2/gns3/project-files/dynamips
+Jun 16 16:11:36.592 HYPERVISOR: exec_cmd: hypervisor working_dir /home/antonio/Desktop/AR/PROJETO/ar-projeto/fase2/gns3/project-files/dynamips/346be29c-9624-43b7-84f4-36c60c987d8d 
+Jun 16 16:11:36.592 GENERAL: working_dir=/home/antonio/Desktop/AR/PROJETO/ar-projeto/fase2/gns3/project-files/dynamips/346be29c-9624-43b7-84f4-36c60c987d8d
+Jun 16 16:11:36.592 HYPERVISOR: exec_cmd: vm create OldDist2 8 c3725 
+Jun 16 16:11:36.592 VM: VM OldDist2 created.
+Jun 16 16:11:36.593 HYPERVISOR: exec_cmd: vm set_con_tcp_port OldDist2 5062 
+Jun 16 16:11:36.593 HYPERVISOR: exec_cmd: c3725 get_mac_addr OldDist2 
+Jun 16 16:11:36.593 HYPERVISOR: exec_cmd: vm set_disk0 OldDist2 1 
+Jun 16 16:11:36.594 HYPERVISOR: exec_cmd: vm get_status OldDist2 
+Jun 16 16:11:36.594 HYPERVISOR: exec_cmd: vm set_idle_pc OldDist2 0x60a68e70 
+Jun 16 16:11:36.595 HYPERVISOR: exec_cmd: vm set_ios OldDist2 /home/antonio/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Jun 16 16:11:36.595 HYPERVISOR: exec_cmd: c3725 set_mac_addr OldDist2 c208.23a2.0000 
+Jun 16 16:11:36.596 HYPERVISOR: exec_cmd: vm set_nvram OldDist2 256 
+Jun 16 16:11:36.596 HYPERVISOR: exec_cmd: vm get_status OldDist2 
+Jun 16 16:11:36.596 HYPERVISOR: exec_cmd: vm slot_add_binding OldDist2 1 0 NM-16ESW 
+Jun 16 16:11:41.713 HYPERVISOR: exec_cmd: nio create_udp udp-c3f4c055-6ae9-480c-9f37-bde665e5d277 10068 127.0.0.1 10069 
+Jun 16 16:11:41.930 HYPERVISOR: exec_cmd: vm slot_add_nio_binding OldDist2 1 14 udp-c3f4c055-6ae9-480c-9f37-bde665e5d277 
+Jun 16 16:11:41.930 HYPERVISOR: exec_cmd: vm get_status OldDist2 
+Jun 16 16:11:42.143 HYPERVISOR: exec_cmd: nio create_udp udp-f3353c1a-04be-4153-886c-838815f86d88 10076 127.0.0.1 10077 
+Jun 16 16:11:42.144 HYPERVISOR: exec_cmd: vm slot_add_nio_binding OldDist2 1 13 udp-f3353c1a-04be-4153-886c-838815f86d88 
+Jun 16 16:11:42.145 HYPERVISOR: exec_cmd: vm get_status OldDist2 
+Jun 16 16:11:43.975 HYPERVISOR: exec_cmd: nio create_udp udp-44b466c7-f42e-4fad-81c1-ba67dac17159 10158 127.0.0.1 10159 
+Jun 16 16:11:43.976 HYPERVISOR: exec_cmd: vm slot_add_nio_binding OldDist2 1 11 udp-44b466c7-f42e-4fad-81c1-ba67dac17159 
+Jun 16 16:11:43.977 HYPERVISOR: exec_cmd: vm get_status OldDist2 
+Jun 16 16:11:44.285 HYPERVISOR: exec_cmd: nio create_udp udp-53496631-dddd-4736-b0c5-95a2aef8b84a 10176 127.0.0.1 10177 
+Jun 16 16:11:44.286 HYPERVISOR: exec_cmd: vm slot_add_nio_binding OldDist2 1 12 udp-53496631-dddd-4736-b0c5-95a2aef8b84a 
+Jun 16 16:11:44.286 HYPERVISOR: exec_cmd: vm get_status OldDist2 
+Jun 16 16:12:27.569 HYPERVISOR: exec_cmd: vm set_ghost_status OldDist2 2 
+Jun 16 16:12:27.570 HYPERVISOR: exec_cmd: vm set_ghost_file OldDist2 /home/antonio/Desktop/AR/PROJETO/ar-projeto/fase2/gns3/project-files/dynamips/c3725-advipservicesk9-mz.124-21.image-128.ghost 
+Jun 16 16:12:27.571 HYPERVISOR: exec_cmd: vm get_status OldDist2 
+Jun 16 16:12:27.571 HYPERVISOR: exec_cmd: vm set_config OldDist2 configs/i8_startup-config.cfg 
+Jun 16 16:12:27.572 HYPERVISOR: exec_cmd: vm start OldDist2 

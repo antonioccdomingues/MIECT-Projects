@@ -1,0 +1,297 @@
+#AVEIRO 
+
+##SWL2
+Port 7 -> 10
+Port 6 -> 7
+Port 5 -> 25
+Port 1 e 2 -> dot1Q
+
+## Piso 1 ESW5
+
+vlan database
+vlan 1
+vlan 10
+vlan 7
+vlan 25
+vlan 101
+vlan 102
+exit
+write
+
+conf t
+#int vlan 1
+#no shut
+#ip address 10.0.0.100 255.255.255.0
+#ip ospf 1 area 0
+#ipv6 enable
+#ipv6 address 2002:A:A:0000::1/64		
+#ipv6 ospf 1 area 0
+#exit
+
+int vlan 7
+no shut
+ip address 10.1.0.100 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0100::1/64	
+ipv6 ospf 1 area 0
+exit
+
+int vlan 10
+no shut
+ip address 10.1.48.100 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0130::1/64	
+ipv6 ospf 1 area 0
+exit
+
+int vlan 25
+no shut
+ip address 10.6.32.100 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0620::1/64	
+ipv6 ospf 1 area 0
+exit
+
+
+int vlan 101
+no shut
+ip address 10.101.0.102 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:101:0::3/64					
+ipv6 ospf 1 area 0
+exit
+
+int vlan 102
+no shut
+ip address 10.102.0.102 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:102:0::3/64					
+ipv6 ospf 1 area 0
+exit
+end
+write
+
+##conf
+conf t
+ip routing
+ipv6 unicast-routing
+ipv6 router ospf 1
+router-id 3.3.3.3
+end
+write
+
+
+##conf trunk ports
+conf t
+int range f1/13 - 15
+no shut
+switchport mode trunk
+switchport trunk encapsulation dot1
+end
+write
+
+
+##
+conf t
+router ospf 1 
+passive-interface vlan 1
+passive-interface vlan 25
+end
+write
+
+##FALTA CONFIGURAR O DHCP
+
+
+## Ligação ao core 1
+conf t
+int f1/12
+no shut
+switchport mode trunk
+switchport trunk allowed vlan 1,101,25,1002-1005
+end
+
+## Ligação ao core 2
+conf t
+int f1/11
+no shut
+switchport mode trunk
+switchport trunk allowed vlan 1,25,102,1002-1005
+end
+write
+
+
+###########################################ATÉ AQUI DONE
+
+conf t
+service dhcp
+int vlan 7
+ip helper-address 10.9.0.1
+int vlan 10
+ip helper-address 10.9.0.1
+int vlan 25
+ip helper-address 10.9.0.1
+int vlan 101
+ip helper-address 10.9.0.1
+int vlan 102
+ip helper-address 10.9.0.1
+end
+write
+
+
+##################################################################################ESW6
+
+
+vlan database
+vlan 1
+vlan 10
+vlan 7
+vlan 25
+vlan 101
+vlan 102
+exit
+write
+
+conf t
+#int vlan 1
+#no shut
+#ip address 10.0.0.101 255.255.255.0
+#ip ospf 1 area 0
+#ipv6 enable
+#ipv6 address 2002:A:A:0000::2/64		
+#ipv6 ospf 1 area 0
+#exit
+
+int vlan 7
+no shut
+ip address 10.1.0.101 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0100::2/64	
+ipv6 ospf 1 area 0
+exit
+
+int vlan 10
+no shut
+ip address 10.1.48.101 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0130::2/64	
+ipv6 ospf 1 area 0
+exit
+
+int vlan 25
+no shut
+ip address 10.6.32.101 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:10:0620::2/64	
+ipv6 ospf 1 area 0
+exit
+
+
+int vlan 101
+no shut
+ip address 10.101.0.103 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:101:0::4/64					
+ipv6 ospf 1 area 0
+exit
+
+int vlan 102
+no shut
+ip address 10.102.0.103 255.255.255.0
+ip ospf 1 area 0
+ipv6 enable
+ipv6 address 3100:10:102:0::4/64					
+ipv6 ospf 1 area 0
+exit
+end
+write
+
+##conf
+conf t
+ip routing
+ipv6 unicast-routing
+ipv6 router ospf 1
+router-id 4.4.4.4
+end
+write
+
+
+##conf trunk ports
+conf t
+int range f1/13 - 15
+no shut
+switchport mode trunk
+switchport trunk encapsulation dot1
+end
+write
+
+
+##
+conf t
+router ospf 1 
+passive-interface vlan 1
+passive-interface vlan 25
+end
+write
+
+##FALTA CONFIGURAR O DHCP
+
+
+## Ligação ao core 1
+conf t
+int f1/12
+no shut
+switchport mode trunk
+switchport trunk allowed vlan 1,101,25,1002-1005
+end
+
+## Ligação ao core 2
+conf t
+int f1/11
+no shut
+switchport mode trunk
+switchport trunk allowed vlan 1,102,25,1002-1005
+end
+write
+
+
+###########################################ATÉ AQUI DONE
+
+conf t
+service dhcp
+int vlan 7
+ip helper-address 10.9.0.1
+int vlan 10
+ip helper-address 10.9.0.1
+int vlan 25
+ip helper-address 10.9.0.1
+int vlan 101
+ip helper-address 10.9.0.1
+int vlan 102
+ip helper-address 10.9.0.1
+end
+write
+
+
+#################################################PCS [ DONE ]
+
+PC DataPC1 -> 
+ip 10.1.48.1/24 10.1.48.100
+ip 3100:10:10:0130::3/64 3100:10:10:0130::1
+
+PC DataPC2 -> 
+ip 10.1.0.1/24 10.1.0.101
+ip 3100:10:10:0100::3/64 3100:10:10:0100::2	
+
+PC WIFI -> 
+ip 10.6.32.1/24 10.6.32.100
+ip 3100:10:10:0620::1 3100:10:10:0620::2
+

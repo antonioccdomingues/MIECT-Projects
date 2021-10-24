@@ -1,0 +1,395 @@
+TUNEL DIST1 -> Antena | 10.1.2.1 -> 10.1.2.2
+TUNEL DIST2 -> Antena | 10.1.2.5 -> 10.1.2.6
+
+192.168.1.0/32
+3100:10:10:40/128
+entre as antenas
+
+
+##################################### Piso2Dist1 #####################################
+
+interface Loopback0
+ ip address 10.1.1.1 255.255.255.255
+ ip ospf 1 area 0
+ ipv6 address 3100:10:10:11::1/128
+
+interface Tunnel0
+ ip address 10.1.2.1 255.255.255.252
+ ipv6 address 3100:10:10:12::1/128
+ tunnel source Loopback0
+ tunnel destination 10.1.1.3
+
+interface FastEthernet1/0
+ no switchport
+ ip address 10.100.100.1 255.255.255.252
+ ip policy route-map ipv4route
+ ip ospf 1 area 0
+ duplex full
+ speed 100
+ ipv6 policy route-map ipv6route
+
+interface Vlan10
+ ip address 10.1.48.100 255.255.255.0
+ ip helper-address 10.9.0.1
+ ip policy route-map ipv4route
+ ip ospf 1 area 0
+ ipv6 address 3100:10:10:130::1/64
+ ipv6 enable
+ ipv6 ospf 1 area 0
+ ipv6 policy route-map ipv6route
+
+
+access-list 100 permit ip 10.1.48.0 0.0.0.255 10.33.48.0 0.0.0.255
+
+ipv6 access-list antenaV6
+ sequence 20 permit ipv6 3100:10:10:130::/64 3100:10:10:2130::/64
+ 
+ 
+route-map ipv6route permit 10
+ match ipv6 address antenav6
+ set ipv6 next-hop 3100:10:10:12::2
+
+route-map ipv4route permit 10
+ match ip address 100
+ set ip next-hop 10.1.2.2
+ 
+ 
+##################################### Piso2Dist2 #####################################
+
+interface Loopback0
+ ip address 10.1.1.2 255.255.255.255
+ ip ospf 1 area 0
+ ipv6 address 3100:10:10:11::2/128
+
+interface Tunnel0
+ ip address 10.1.2.5 255.255.255.252
+ ipv6 address 3100:10:12:12::5/128
+ tunnel source Loopback0
+ tunnel destination 10.1.1.3
+
+
+interface FastEthernet1/0
+ no switchport
+ ip address 10.100.100.5 255.255.255.252
+ ip policy route-map ipv4route
+ ip ospf 1 area 0
+ duplex full
+ speed 100
+ ipv6 policy route-map ipv6route
+
+
+interface Vlan10
+ ip address 10.1.48.101 255.255.255.0
+ ip helper-address 10.9.0.1
+ ip policy route-map ipv4route
+ ip ospf 1 area 0
+ ipv6 address 3100:10:10:130::2/64
+ ipv6 enable
+ ipv6 ospf 1 area 0
+ ipv6 policy route-map ipv6route
+
+
+access-list 100 permit ip 10.1.48.0 0.0.0.255 10.33.48.0 0.0.0.255
+
+ipv6 access-list antenaV6
+ sequence 20 permit ipv6 3100:10:10:130::/64 3100:10:10:2130::/64
+
+route-map ipv6route permit 10
+ match ipv6 address antenaV6
+ set ipv6 next-hop 3100:10:10:12::6
+!
+route-map ipv4route permit 10
+ match ip address 100
+ set ip next-hop 10.1.2.6
+
+
+
+##################################### AntenaAveiro #####################################
+
+interface Loopback0
+ ip address 10.1.1.3 255.255.255.255
+ ip ospf 1 area 0
+ ipv6 address 3100:10:10:11::3/128
+
+interface Tunnel0
+ ip address 10.1.2.2 255.255.255.252
+ ipv6 address 3100:10:10:12::2/128
+ tunnel source Loopback0
+ tunnel destination 10.1.1.1
+
+interface Tunnel1
+ ip address 10.1.2.6 255.255.255.252
+ ipv6 address 3100:10:10:12::6/128
+ tunnel source Loopback0
+ tunnel destination 10.1.1.2
+
+interface FastEthernet0/0
+ ip address 192.168.1.1 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ ipv6 address 3100:10:10:41::1/128
+
+interface FastEthernet0/1
+ ip address 10.100.100.2 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+
+interface FastEthernet1/0
+ ip address 10.100.100.6 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+
+
+ip route 10.33.48.0 255.255.255.0 192.168.1.2
+ipv6 route 3100:10:10:2130::/64 3100:10:10:41::2
+
+
+access-list 100 permit ip 10.1.48.0 0.0.0.255 10.33.48.0 0.0.0.255
+
+ipv6 access-list antenaV6
+ sequence 20 permit ipv6 3100:10:10:130::/64 3100:10:10:2130::/64
+ 
+
+route-map ipv6route permit 10
+ match ipv6 address antenav6
+ set ipv6 next-hop 3100:10:10:41::2
+
+route-map ipv4route permit 10
+ match ip address 100
+ set ip next-hop 192.168.1.1 192.168.1.2
+
+
+##################################### AntenaLisboa #####################################
+
+[FALTA FAZER O ENCAMINHAMENTO INVERSO]
+
+interface Loopback0
+ ip address 10.2.1.1 255.255.255.255
+ ip ospf 1 area 0
+ ipv6 address 3100:10:10:21::1/128
+
+interface FastEthernet0/0
+ ip address 192.168.1.2 255.255.255.252
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ ipv6 address 3100:10:10:41::2/128
+
+interface FastEthernet0/1
+ ip address 10.33.48.1 255.255.255.0
+ duplex auto
+ speed auto
+
+
+ip route 10.1.48.0 255.255.255.0 192.168.1.1
+ipv6 route 3100:10:10:0130::/64 3100:10:10:41::1
+
+
+#########################################################################################################################################################
+
+							TUNEIS IPSEC
+							
+							
+####ISP_PT1################################################################################
+
+interface Loopback0
+ip address 10.1.1.10 255.255.255.255
+ip route 10.3.1.1 255.255.255.255 100.0.0.4
+ip route 10.2.1.1 255.255.255.255 100.0.0.3
+
+
+crypto isakmp policy 30
+authentication pre-share
+crypto isakmp key edvid address 10.2.1.1  // aqui podem ser endereços de cabos, e nao loopback
+crypto isakmp key edvid address 10.3.1.1  // aqui podem ser endereços de cabos, e nao loopback
+crypto ipsec transform-set authT ah-sha-hmac
+crypto ipsec transform-set cipherT esp-des
+crypto ipsec transform-set auth_ciphT ah-sha-hmac esp-des
+crypto ipsec profile EDVIDipsec
+set transform-set authT cipher Tauth_ciphT
+
+
+interface Tunnel 0 
+ip address 10.1.2.9 255.255.255.252
+tunnel source Loopback0
+tunnel destination 10.3.1.1
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile EDVIDipsec
+
+interface Tunnel 1
+ip address 10.1.2.13 255.255.255.252
+tunnel source Loopback0
+tunnel destination 10.2.1.1
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile EDVIDipsec
+
+
+ip route 10.66.0.0 255.255.0.0 Tunnel 0  ## REDE DE VIDEO CONF S.Francisco
+ip route 10.34.0.0 255.255.0.0 Tunnel 1  ## REDE DE VIDEO CONF Lisboa
+
+
+
+
+####ISP_PT2########################################################################################
+
+interface Loopback0
+ip address 10.1.1.11 255.255.255.255
+
+ip route 10.3.1.1 255.255.255.255 100.0.0.4
+ip route 10.2.1.1 255.255.255.255 100.0.0.3
+ 
+crypto isakmp policy 30
+authentication pre-share
+crypto isakmp key edvid address 10.2.1.1  // aqui podem ser endereços de cabos, e nao loopback
+crypto isakmp key edvid address 10.3.1.1  // aqui podem ser endereços de cabos, e nao loopback
+crypto ipsec transform-set authT ah-sha-hmac
+crypto ipsec transform-set cipherT esp-des
+crypto ipsec transform-set auth_ciphT ah-sha-hmac esp-des
+crypto ipsec profile EDVIDipsec
+set transform-set authT cipherT auth_ciphT
+
+
+interface Tunnel 0 
+ip address 10.1.2.17 255.255.255.252
+tunnel source Loopback0
+tunnel destination 10.3.1.1
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile EDVIDipsec
+
+interface Tunnel 1
+ip address 10.1.2.21 255.255.255.252
+tunnel source Loopback0
+tunnel destination 10.2.1.1
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile EDVIDipsec
+
+
+ip route 10.66.0.0 255.255.0.0 Tunnel 0  ## REDE DE VIDEO CONF S.Francisco
+ip route 10.34.0.0 255.255.0.0 Tunnel 1  ## REDE DE VIDEO CONF Lisboa
+
+
+#### R4 S.Francisco ################################################################################
+
+interface Loopback0
+ip address 10.3.1.1 255.255.255.255
+
+ip route 10.1.1.10 255.255.255.255 100.0.0.1
+ip route 10.1.1.11 255.255.255.255 100.0.0.2
+
+crypto isakmp policy 30
+authentication pre-share
+crypto isakmp key edvid address 10.1.1.10  // aqui podem ser endereços de cabos, e nao loopback
+crypto isakmp key edvid address 10.1.1.11  // aqui podem ser endereços de cabos, e nao loopback
+crypto ipsec transform-set authT ah-sha-hmac
+crypto ipsec transform-set cipherT esp-des
+crypto ipsec transform-set auth_ciphT ah-sha-hmac esp-des
+crypto ipsec profile EDVIDipsec
+set transform-set authT cipherT auth_ciphT
+
+interface Tunnel 0 
+ip address 10.1.2.10 255.255.255.252
+tunnel source Loopback0
+tunnel destination 10.1.1.10
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile EDVIDipsec
+
+interface Tunnel 1 
+ip address 10.1.2.18 255.255.255.252
+tunnel source Loopback0
+tunnel destination 10.1.1.11
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile EDVIDipsec
+
+ip route 10.2.0.0 255.255.0.0 Tunnel 0  ## VideoConf Aveiro
+
+
+#### PT12 Lisboa ################################################################################
+
+interface Loopback0
+ip address 10.2.1.1 255.255.255.255
+ 
+ip route 10.1.1.10 255.255.255.255 100.0.0.1
+ip route 10.1.1.11 255.255.255.255 100.0.0.2
+
+
+crypto isakmp policy 30
+authentication pre-share
+crypto isakmp key edvid address 10.1.1.10  // aqui podem ser endereços de cabos, e nao loopback
+crypto isakmp key edvid address 10.1.1.11  // aqui podem ser endereços de cabos, e nao loopback
+crypto ipsec transform-set authT ah-sha-hmac
+crypto ipsec transform-set cipherT esp-des
+crypto ipsec transform-set auth_ciphT ah-sha-hmac esp-des
+crypto ipsec profile EDVIDipsec
+set transform-set authT cipherT auth_ciphT
+
+
+interface Tunnel 0 
+ip address 10.1.2.14 255.255.255.252
+tunnel source Loopback0
+tunnel destination 10.1.1.10
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile EDVIDipsec
+
+interface Tunnel 1 
+ip address 10.1.2.22 255.255.255.252
+tunnel source Loopback0
+tunnel destination 10.1.1.11
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile EDVIDipsec
+
+ip route 10.2.0.0 255.255.0.0 Tunnel 0  ## VideoConf Aveiro
+
+################################################################################################################################################
+
+IPSEC da distribuição ao core
+
+################# Piso1DIst1 ################################
+
+crypto isakmp policy 30
+authentication pre-share
+crypto isakmp key edvid address 10.1.1.6  // aqui podem ser endereços de cabos, e nao loopback
+crypto ipsec transform-set authT ah-sha-hmac
+crypto ipsec transform-set cipherT esp-des
+crypto ipsec transform-set auth_ciphT ah-sha-hmac esp-des
+crypto ipsec profile EDVIDipsec
+set transform-set authT cipherT auth_ciphT
+
+
+interface Tunnel 0 
+ip address 10.1.2.25 255.255.255.252
+tunnel source Loopback0
+tunnel destination 10.1.1.6
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile EDVIDipsec
+
+
+
+ip route 10.9.0.0 255.255.255.0 Tunnel 0  ## falta por aqui a rede do datacenter
+
+
+
+################# DcDIst1 ################################
+
+crypto isakmp policy 30
+authentication pre-share
+crypto isakmp key edvid address 10.1.1.8  // aqui podem ser endereços de cabos, e nao loopback
+crypto ipsec transform-set authT ah-sha-hmac
+crypto ipsec transform-set cipherT esp-des
+crypto ipsec transform-set auth_ciphT ah-sha-hmac esp-des
+crypto ipsec profile EDVIDipsec
+set transform-set authT cipherT auth_ciphT
+
+
+interface Tunnel 0 
+ip address 10.1.2.26 255.255.255.252
+tunnel source Loopback0
+tunnel destination 10.1.1.8
+tunnel mode ipsec ipv4
+tunnel protection ipsec profile EDVIDipsec
+
+
+ip route 10.1.32.0 255.255.255.0 Tunnel 0  ## falta por aqui a rede do piso 1
+
