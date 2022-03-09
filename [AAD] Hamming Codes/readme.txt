@@ -1,0 +1,1 @@
+Hamming Codes circuit to decode and encode a 11 bits binary word and correct it. Developed for the High Performance Architectures course.
