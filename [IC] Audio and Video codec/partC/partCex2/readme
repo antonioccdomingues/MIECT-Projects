@@ -1,0 +1,10 @@
+Para correr o exercicio 2 da partC
+
+executar os seguintes comandos neste diretório
+
+1º $ cmake . 
+2º $ make
+3º $ ./Ex2 "nomedaimagem" valorQuantização     onde o nomedaimagem é o nome da imagem a codificar e o valorQuantização é o número de bits que queremos alterar
+4º Esperar pelo resultado (quanto maior a imagem mais tempo demora)
+
+

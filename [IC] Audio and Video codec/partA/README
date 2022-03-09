@@ -1,0 +1,22 @@
+**-----------------------------------------------**
+Para executar o teste do exercicio 1 da parte A:
+$ g++ testEx1.cpp -o test1
+$ ./test1
+
+ - É criado um ficheiro "bitfileout" com o conteudo da palavra passada como parametro de entrada na funcao "writenbits";
+
+ - A função "read1bit" imprime no terminal o bit1 da terceira palavra do ficheiro "bitfileout"; 
+
+ - É impresso no terminal o array retornado pela função "readnbits". Este array corresponde aos bits lidos do ficheiro "bitfileout";
+
+ - Um byte é escrito (bit a bit) no ficheiro "bitfileout2" através das várias chamadas da função "write1bit". 
+
+---------------------------------------------------------
+
+Para executar o teste do exercicio 3 da parte A:
+$ g++ testEx3.c++ -o teste3
+$ ./teste3
+
+nota:
+De seguida é pedido um inteiro ao utilizador, cujo objetivo é saber quantos numeros aleatórios(entre 0 e 50) vão ser gerados pelo programa
+

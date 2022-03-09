@@ -1,0 +1,23 @@
+Para correr o exercicio 1 da partC
+
+executar os seguintes comandos neste diretório
+
+1º $ cmake . 
+2º $ make
+3º $ ./Ex1 "nomedaimagem"      onde o nomedaimagem é o nome da imagem a codificar passado como 				      		argumento
+4º Esperar pelo resultado (quanto maior a imagem mais tempo demora)
+
+
+imagens mais rapidas de codificar e descodificar, mas com resultados menos bons
+baboon.ppm
+bike3.ppm
+anemone.ppm
+tulips.ppm
+lena.ppm
+
+imagens muito lentas mas cujo resultado é melhor:
+house.ppm
+boat.ppm
+peppers.ppm
+airplane.ppm
+...
