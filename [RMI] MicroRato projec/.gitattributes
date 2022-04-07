@@ -6,4 +6,3 @@ libRobSock/** linguist-detectable=false
 logplayer/** linguist-detectable=false
 robsample/** linguist-detectable=false
 simulator/** linguist-detectable=false
-pClient/** linguist-detectable=false
