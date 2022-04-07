@@ -1,0 +1,5 @@
+bin/** linguist-detectable=false
+build/** linguist-detectable=false
+doc/** linguist-detectable=false
+include/** linguist-detectable=false
+lib/** linguist-detectable=false
